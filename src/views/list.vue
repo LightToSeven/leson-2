@@ -47,7 +47,7 @@
     //импортируем компонент с модалкой
     import modalAdd from './modal-add.vue';
 
-
+    const fv_limit = 3;
     export default {
 
         data() {
@@ -110,7 +110,7 @@
                 this.$refs.modalAdd.openEditModal(contact);
             },
             fvContacts_add(contact) {
-                if (this.favoritesList_limit<3) {
+                if (this.favoritesList_limit<fv_limit) {
                     this.favoritesList.push(contact);
                     for (const [index, value] of this.contactsList.entries()) {
                         if (value.id == contact.id) {
